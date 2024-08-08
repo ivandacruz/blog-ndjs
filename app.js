@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
+
 // POSTS
 app.get('/posts', (req, res) => {
     db.all('SELECT * FROM posts ORDER BY created_at DESC', [], (err, rows) => {
@@ -67,12 +68,16 @@ app.get('/post/:title', (req, res) => {
 
 });
 
+// app.get("/post-details/:title", (req,res) => {
+//     res.sendFile(path.join(__dirname, "views", "post-details.html"));
+// });
+
 app.post('/add', upload.single('image'), (req, res) => {
     const {title, category, content} = req.body;
     const image = req.file ? `/uploads/${req.file.filename}` : null;
 
     db.run(
-        "INSET INTO posts (title, category, content, image, created_at) VALUES (?,?,?,?, CURRENT_TIMESTAMP)",
+        "INSERT INTO posts (title, category, content, image, created_at) VALUES (?,?,?,?, CURRENT_TIMESTAMP)",
         [title, category, content, image],
         (err) => {
             if (err) {
