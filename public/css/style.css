@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     padding: 0;
@@ -78,6 +78,47 @@ header{
     align-items: center;
     gap: 5px;
     color: var(--bg-color);
+    background: var(--second-color);
+    padding: 7px 17px;
+    font-size: .96rem;
+    border-radius: 8px;
+}
+
+
+.home {
+    width: 100%;
+    min-height: 440px;
+    background: var(--container-color);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h2 {
+    font-size: 3.5rem;
+    color: var(--bg-color);
+    text-align: center;
+}
+.search-box {
+    background: var(--bg-color);
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 1.5rem;
+}
+
+.search-box .bx{
+    font-size: 20px;
+    color: var(--text-color);
+}
+.search-box input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: .9rem;
+    padding: 10px 0;
 }
 
 
