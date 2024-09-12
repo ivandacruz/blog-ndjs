@@ -24,7 +24,7 @@
     <!-- post content -->
      <section class="post-header">
         <div class="header-content post-container">
-            <h2 id="post-subtitle"></h2>
+            <h2 id="post-category"></h2>
             <!-- title -->
              <h1 class="header-title" id="post-title"></h1>
              <!-- post image -->
@@ -32,6 +32,17 @@
         </div>
      </section>
      <section id="post-content" class="post-content post-container"></section>
+
+     <!-- share -->
+    <div class="share post-container">
+        <span class="share-title">share this article</span>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="bx bxl-instagram"></i></a>
+            <a href="https://x.com/" target="_blank"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+    </div>
     
      <!-- Footer -->
     <footer class="footer container">
@@ -63,7 +74,7 @@
             })
             .then((post) => {
                 document.getElementById("post-title").innerText = post.title;
-                document.getElementById("post-subtitle").innerText = post.category;
+                document.getElementById("post-category").innerText = post.category;
                 if (post.image){
                     document.getElementById(
                         "post-image"
