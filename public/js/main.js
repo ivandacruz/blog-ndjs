@@ -37,3 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
         postContainer.innerHTML = "<p>Error Fetching posts.</p>";
     });
 });
+
+
+// header
+let header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("shadow", window.scrollY > 0);
+});
+
+
+
+
+
