@@ -30,6 +30,14 @@
             </div>
         </div>
     </section>
+    <!-- posts filter -->
+     <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="Art">Art</span>
+        <span class="filter-item" data-filter="Tecnology">Tecnology</span>
+        <span class="filter-item" data-filter="Travel">Travel</span>
+        <span class="filter-item" data-filter="Animal">Animal</span>
+    </div>
 
     <!-- Posts -->
     <section class="posts container" id="posts"></section>
@@ -44,9 +52,33 @@
             <a href="https://www.linkedin.com/" target="_blank"><i class="bx bxl-linkedin"></i></a>
         </div>
     </footer>
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"
+    ></script>
 
     <!-- Link To JS -->
-     <script src="/js/main.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- filter js -->
+    <script>
+        $(document).ready(function() {
+            $(".filter-item").click(function () {
+                const value = $(this).attr("data-filter");
+                if(value == "all") {
+                    $(".post").show("1000");
+                }else {
+                    $(".post")
+                        .not("." + value)
+                        .hide("1000");
+                    $(".post")
+                        .filter("." + value)
+                        .show("1000");
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

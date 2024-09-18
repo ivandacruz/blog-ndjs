@@ -75,12 +75,34 @@
                         <td>${post.title}</td>
                         <td>${post.category || "No Category"}</td>
                         <td>
-                            <button class="delete-button data-id=" ${post.id}>Delete</botton>
+                            <button class="delete-button" data-id="${post.id}">Delete</botton>
                         </td>
                     </tr>
                     `
                 )
                 .join(" ");
+                // Delete post event listener
+                document.querySelectorAll(".delete-button").forEach((button) => {
+                    button.addEventListener("click", function() {
+                        const postId = this.getAttribute("data-id")
+                        fetch(`/delete/${postId}`, {
+                            method: "POST",
+                        })
+                        .then((response) => {
+                            if(!response.ok) {
+                                throw new Error("Network response was not ok");
+                            }
+                            // Remove the row from table
+                            this.closest("tr").remove();
+                        })
+                        .catch((error) => {
+                            console.error(
+                                "There was a problem with the fetch operation",
+                                error
+                            );
+                        });
+                    });
+                });
             });
         });
     </script>
