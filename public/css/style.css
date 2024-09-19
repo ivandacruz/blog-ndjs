@@ -456,6 +456,11 @@ header.shadow .admin-btn .bx {
     font-size: .97rem;
     font-weight: 500;
     cursor: pointer;
+    transition: .2s;
+}
+
+.filter-item:hover {
+    color: gold;
 }
 
 .active-filter {
@@ -466,4 +471,17 @@ header.shadow .admin-btn .bx {
 }
 
 
+/* Responsive screens */
+
+@media  (max-width: 1060px){
+    .container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    .home-content h2{
+        font-size: 3rem;
+        color: var(--bg-color);
+        text-align: center;
+    }
+}
 

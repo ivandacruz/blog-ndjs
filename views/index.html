@@ -76,8 +76,15 @@
                         .filter("." + value)
                         .show("1000");
                 }
-            })
-        })
+            });
+            // Active button
+            $(".filter-item").click(function () {
+                $(this)
+                    .addClass("active-filter")
+                    .siblings()
+                    .removeClass("active-filter");
+            });
+        });
     </script>
 </body>
 

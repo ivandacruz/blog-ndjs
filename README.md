@@ -12,8 +12,9 @@
 node app.js
 
 ```
+[Google Fonts](https://fonts.google.com/)
 
-
+[Boxicons](https://boxicons.com/)
 
 [Quilljs](https://quilljs.com/)
 
